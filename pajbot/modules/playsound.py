@@ -14,7 +14,7 @@ log = logging.getLogger(__name__)
 class PlaysoundModule(BaseModule):
     ID = __name__.split(".")[-1]
     NAME = "Playsound"
-    DESCRIPTION = "Play a sound on stream with !#playsound"
+    DESCRIPTION = "Play a sound on stream with !playsound"
     CATEGORY = "Feature"
     SETTINGS = [
         ModuleSetting(
@@ -454,7 +454,7 @@ class PlaysoundModule(BaseModule):
         from pajbot.models.command import Command
         from pajbot.models.command import CommandExample
 
-        self.commands["#playsound"] = Command.raw_command(
+        self.commands["playsound"] = Command.raw_command(
             self.play_sound,
             tokens_cost=self.settings["token_cost"],
             cost=self.settings["point_cost"],
@@ -467,12 +467,12 @@ class PlaysoundModule(BaseModule):
                 CommandExample(
                     None,
                     'Play the "doot" sample',
-                    chat="user:!#playsound doot\n" "bot>user:Successfully played the sound doot on stream!",
+                    chat="user:!playsound doot\n" "bot>user:Successfully played the sound doot on stream!",
                 ).parse()
             ],
         )
 
-        self.commands["#playsound"].long_description = 'Playsounds can be tried out <a href="/playsounds">here</a>'
+        self.commands["playsound"].long_description = 'Playsounds can be tried out <a href="/playsounds">here</a>'
 
         self.commands["add"] = Command.multiaction_command(
             level=100,
