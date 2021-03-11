@@ -12,7 +12,7 @@ log = logging.getLogger(__name__)
 class ShowEmoteModule(BaseModule):
     ID = __name__.split(".")[-1]
     NAME = "Show Emote"
-    DESCRIPTION = "Show a single emote on screen for a few seconds using !#showemote"
+    DESCRIPTION = "Show a single emote on screen for a few seconds using !showemote"
     CATEGORY = "Feature"
     PARENT_MODULE = CLROverlayModule
     SETTINGS = [
@@ -56,11 +56,11 @@ class ShowEmoteModule(BaseModule):
         ),
         ModuleSetting(
             key="command_name",
-            label="Command name (i.e. #showemote)",
+            label="Command name (i.e. !showemote)",
             type="text",
             required=True,
             placeholder="Command name (no !)",
-            default="#showemote",
+            default="!showemote",
             constraints={"min_str_len": 1, "max_str_len": 20},
         ),
         ModuleSetting(
